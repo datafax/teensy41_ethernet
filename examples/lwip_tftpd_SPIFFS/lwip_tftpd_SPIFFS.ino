@@ -4,7 +4,7 @@
 // https://github.com/PaulStoffregen/teensy41_extram/blob/SPIFFS-FLASH-ONLY
 
 
-#include <time.h>
+#include <timelib.h>
 #include "lwip_t41.h"
 #include "lwip/inet.h"
 #include "lwip/dhcp.h"

@@ -3,7 +3,7 @@
 //  ftpd with SD lib   TODO
 #include <SPI.h>
 #include <SD.h>
-#include <time.h>
+#include <timelib.h>
 #include "lwip_t41.h"
 #include "lwip/inet.h"
 #include "lwip/dhcp.h"

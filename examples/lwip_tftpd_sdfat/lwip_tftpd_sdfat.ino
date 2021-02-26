@@ -2,7 +2,7 @@
 // https://forum.pjrc.com/threads/45647-k6x-LAN8720(A)-amp-lwip
 #include <SPI.h>
 #include "SdFat.h"
-#include <time.h>
+#include <timelib.h>
 #include "lwip_t41.h"
 #include "lwip/inet.h"
 #include "lwip/dhcp.h"

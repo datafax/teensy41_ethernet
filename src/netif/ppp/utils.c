@@ -42,7 +42,7 @@
 #include <fcntl.h>
 #include <syslog.h>
 #include <netdb.h>
-#include <time.h>
+#include <timelib.h>
 #include <utmp.h>
 #include <pwd.h>
 #include <sys/param.h>

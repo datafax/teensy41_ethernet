@@ -1,7 +1,7 @@
 // stepl's lwIP 2.0.2
 // https://forum.pjrc.com/threads/45647-k6x-LAN8720(A)-amp-lwip
 
-#include <time.h>
+#include <timelib.h>
 #include <sys/time.h>
 #include "lwip_t41.h"
 #include "lwip/inet.h"
@@ -88,7 +88,7 @@ extern "C" {
         __tp->tv_usec = us % USEC_PER_SEC;
         return 0;
     }
-        
+
     int settimeofday(const struct timeval *__tp, const struct timezone *__tzp)
     {
         static char buf1[24], buf2[24];
@@ -113,7 +113,7 @@ extern "C" {
             sign = 1;
             diff_us = p_hw_tm->us - prev_us;
         }
-        
+
         if (prev_hw_us > p_hw_tm->us)
         {
             hw_sign = -1;
@@ -129,12 +129,12 @@ extern "C" {
             p_hw_tm->tcv = (p_hw_tm->us - p_hw_tm->sync_us) / diff_hw_us * hw_sign;
         p_hw_tm->sync_us = p_hw_tm->us;
 
-        LOG("time changed: %c%s us (%c%s us, tcv= %c1 every %d us), %s", 
-            sign < 0 ? '-' : '+', ulltoa(diff_us, buf1, 10), 
-            hw_sign < 0 ? '-' : '+', ulltoa(diff_hw_us, buf2, 10), 
+        LOG("time changed: %c%s us (%c%s us, tcv= %c1 every %d us), %s",
+            sign < 0 ? '-' : '+', ulltoa(diff_us, buf1, 10),
+            hw_sign < 0 ? '-' : '+', ulltoa(diff_hw_us, buf2, 10),
             p_hw_tm->tcv < 0 ? '-' : '+' , abs(p_hw_tm->tcv),
             ctime(&__tp->tv_sec));
-        
+
         return 0;
     }
 }
@@ -167,7 +167,7 @@ void setup()
     netif_set_up(netif_default);
 
     dhcp_start(netif_default);
-        
+
     while (!netif_is_link_up(netif_default)) loop(); // await on link up
 
 #ifdef NTP1

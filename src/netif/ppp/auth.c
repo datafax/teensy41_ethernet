@@ -100,7 +100,7 @@
 #endif
 #endif
 
-#include <time.h>
+#include <timelib.h>
 #endif /* UNUSED */
 
 #include "netif/ppp/ppp_impl.h"

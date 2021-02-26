@@ -2,7 +2,7 @@
 #define INCLUDE_VFS_H
 
 #include <SD.h>
-#include <time.h>
+#include <timelib.h>
 //#define FTPD_DEBUG 1
 
 #define bcopy(src, dest, len) memmove(dest, src, len)

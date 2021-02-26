@@ -541,7 +541,7 @@
 
 #define SNTP_CHECK_STRATUM_KOD         0
 
-#include <time.h>
+#include <timelib.h>
 #include <sys/time.h>
 
 #define SNTP_SET_SYSTEM_TIME_US(sec, us)	do { const struct timeval tv = {(time_t)(sec),(suseconds_t)(us)}; settimeofday(&tv, NULL); } while(0)
